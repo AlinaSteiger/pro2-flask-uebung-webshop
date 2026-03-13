@@ -10,16 +10,12 @@
     <table>
     <!-- eine Schleife mit Jinja, id ist die Nummer und Produkt enthält die Produktdaten -->
     {% for id, produkt in produkte.items() %}
-    
-        <!-- TODO: Hier eine Tabellen-Zeile einfügen (tr) -->
-        
-        <!-- TODO: In die Zeile zwei Spalten einfügen (td):
-            Name des Produkts, verlinkt auf die Detailseite,
-            Preis des Produkts
-         -->
-    
+    <tr>
+        <td> <a href="{{ url_for('details', id=id) }}">{{ produkt.name }}</a></td>
+        <td>{{ produkt.preis }} CHF </td>
+    </tr>
+
     {% endfor %}
     </table>
-
 </body>
 </html>

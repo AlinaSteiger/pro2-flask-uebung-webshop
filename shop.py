@@ -24,18 +24,15 @@ produkte = {
 
 @app.route('/')
 def home():
-    # TODO: produkte auf der Homepage anzeigen, mit Link auf die Detailseite
-    
-    pass # kann gelöscht werden, wenn die Funktion fertig ist
+    return render_template('home.html', produkte=produkte)
 
-@app.route('... TODO hier eine geeignete Route eintragen ...')
+@app.route('/detail/<int:id>')
 def details(id):
-    # TODO: Produkt mit der ID aus der URL auslesen und anzeigen (Template details.html)
-    
-    # TODO: falls eine ungültige id übergeben wird:
-    # return "Produkt nicht gefunden", 404
+    if id not in produkte:
+        return "Das Produkt nicht gefunden.", 404 # Statuscode 404 ausgeben
 
-    pass # kann gelöscht werden, wenn die Funktion fertig ist
+    produkt= produkte[id]
+    return render_template('details.html', produkt=produkt)
 
 # Server auf Port 3000 starten
 if __name__ == '__main__':

@@ -7,14 +7,13 @@
 </head>
 <body>
     <h1>{{ produkt.name }}</h1>
-    
-    <!-- TODO Preis anzeigen -->
-    
-    <!-- TODO Bild anzeigen -->
+    <p> Preis: {{produkt.preis}} CHF</p>
+    <img src="{{ produkt.bild }}" class="img"> <!-- Bild anzeigen -->
+
+    <br><br>
+    <a href="{{ url_for('home') }}">Zurück zum Shop</a>
 
     <hr>
-    
-    <!-- TODO Link zurück zur Startseite -->
     
     <style>
         .img {
@@ -23,3 +22,4 @@
     </style>
 </body>
 </html>
+
