@@ -31,7 +31,7 @@ def details(id):
     if id not in produkte:
         return "Das Produkt nicht gefunden.", 404 # Statuscode 404 ausgeben
 
-    produkt= produkte[id]
+    produkt = produkte[id]
     return render_template('details.html', produkt=produkt)
 
 # Server auf Port 3000 starten
